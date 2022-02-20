@@ -1,10 +1,10 @@
 import './App.css';
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
 
-  const [cards, setCards] = useState([]);
+  const [notes, setNotes] = useState([]);
 
   const handleFormSubmission = function(e) {
 
@@ -12,21 +12,47 @@ function App() {
 
     const title = e.target.title.value;
 
-    const story = e.target.story.value;
+    const note = e.target.note.value;
 
     e.target.title.value = "";
 
-    e.target.story.value = "";
+    e.target.note.value = "";
 
-    const card = <div>
+    const newEntry = {
+      
+      "title": title,
 
-                   <h2>{ title }</h2>
+      "content": note
 
-                 </div>
+    };
 
-    setCards(cards => [...cards, card]);
+    let storedData = localStorage.getItem("notes");
 
-  }
+    storedData = JSON.parse(storedData);
+
+    storedData.push(newEntry);
+
+    localStorage.setItem("notes", JSON.stringify(storedData));
+
+    populateNotesList();
+
+  };
+
+  const populateNotesList = function() {
+
+    let storedData = localStorage.getItem("notes");
+
+    storedData = JSON.parse(storedData);
+
+    setNotes(storedData);
+
+  };
+
+  useEffect(() => {
+   
+    populateNotesList();
+
+  }, []);
 
   return ( 
   
@@ -36,7 +62,21 @@ function App() {
 
         <h2>Notes list</h2>
 
-        { cards }
+        { 
+        
+          notes.map(note => {
+
+            return <div>
+
+                     <h2>{ note["title"] }</h2>
+
+                     <p>{ note["content"] }</p>
+
+                   </div>
+
+          })
+        
+        }
 
       </section>
 
@@ -44,7 +84,7 @@ function App() {
 
         <h2>Main</h2>
 
-        <form onSubmit = {handleFormSubmission}>
+        <form onSubmit = { handleFormSubmission }>
         
           <div>
         
@@ -56,13 +96,13 @@ function App() {
         
           <div>
         
-            <label for="email">Story: </label>
+            <label for="email">Note: </label>
         
             <textarea 
             
-              id = "story" 
+              id = "note" 
               
-              name = "story"
+              name = "note"
                               
               rows = "15" 
               
