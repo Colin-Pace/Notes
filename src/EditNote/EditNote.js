@@ -30,6 +30,10 @@ function EditNote(props) {
 
         return newEntry;
 
+      } else {
+
+        return entry;
+
       }
 
     });
