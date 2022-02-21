@@ -1,4 +1,4 @@
-import { useState } from "react";
+import "./Display.css";
 
 import CreateNote from "../CreateNote/CreateNote.js";
 
@@ -7,8 +7,6 @@ import DisplayNote from "../DisplayNote/DisplayNote.js";
 import EditNote from "../EditNote/EditNote.js";
 
 function Display(props) {
-
-  // const [noteForDisplay, setNoteForDisplay] = useState(false);
 
   const handleCreateNote = function() {
 
@@ -24,9 +22,17 @@ function Display(props) {
 
   return (
 
-    <div>
+    <div id = "displayArea">
 
-      <button onClick = { handleCreateNote }>Create Note</button>
+      <button 
+      
+        id = "createNote" 
+        
+        onClick = { handleCreateNote }>
+          
+          Create Note
+          
+      </button>
 
       {
 

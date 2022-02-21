@@ -1,8 +1,18 @@
 .note {
   border-bottom: 1px solid gray;
+  padding-bottom: 20px;
+}
+
+.noteTitle {
+  color: #6495ED;
 }
 
 .deleteImage {
   height: 15px;
   width: 15px;
+  margin-right: 10px;
+}
+
+.editNote {
+  margin-left: 10px;
 }

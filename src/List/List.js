@@ -20,7 +20,7 @@ function List(props) {
 
     <section id = "notesList">
 
-        <h2 id = "title">Notes list</h2>
+        <h2 id = "title">Notes organizer</h2>
 
         { 
         

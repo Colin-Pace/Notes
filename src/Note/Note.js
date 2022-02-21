@@ -41,6 +41,8 @@ function Note(props) {
     <div className = "note">
 
       <h2
+
+        className = "noteTitle"
       
         onClick = { () => props.handleNoteClick(props.noteIndex) }
 
@@ -59,6 +61,8 @@ function Note(props) {
       />
 
       <button
+
+        className = "editNote"
       
         onClick = { () => handleEditNote(props.noteIndex) }
       

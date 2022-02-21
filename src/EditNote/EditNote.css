@@ -1,0 +1,14 @@
+#editNoteForm {
+  margin-top: 10%;
+  padding-right: 10%;
+}
+
+#titleInput {
+  height: 40px;
+  width: 500px;
+}
+
+#noteInput {
+  height: 300px;
+  width: 500px;
+}

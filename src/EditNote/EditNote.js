@@ -1,3 +1,5 @@
+import "./EditNote.css";
+
 function EditNote(props) {
 
   const handleEditNoteFormSubmission = function(e) {
@@ -48,31 +50,37 @@ function EditNote(props) {
 
     <div>
 
-      <h2>Edit note</h2>
-
-      <form onSubmit = { handleEditNoteFormSubmission }>
+      <form 
+      
+        onSubmit = { handleEditNoteFormSubmission }
+      
+        id = "editNoteForm"
+      
+      >
       
         <div>
       
-          <label for="name">Title: </label>
-      
-          <input type="text" name="title" defaultValue = { props.selectedNote.title }/>
+          <input 
+
+            id = "titleInput"
+          
+            type = "text" 
+            
+            name = "title" 
+            
+            defaultValue = { props.selectedNote.title }
+            
+          />
       
         </div>
       
         <div>
       
-          <label for="email">Note: </label>
-      
           <textarea 
           
-            id = "note" 
+            id = "noteInput" 
             
             name = "note"
-                            
-            rows = "15" 
-            
-            cols = "33"
           
             defaultValue = { props.selectedNote.content }>
           

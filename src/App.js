@@ -13,12 +13,6 @@ function App() {
   // empty, edit, display, create
   const [displayState, setDisplayState] = useState("empty");
 
-  // const [noteForDisplay, setNoteForDisplay] = useState({});
-
-  // const [noteForEdit, setNoteForEdit] = useState({});
-
-  // const [indexOfNoteForEdit, setIndexOfNoteForEdit] = useState(undefined);
-
   const [selectedNote, setSelectedNote] = useState({});
 
   const [indexOfSelectedNote, setIndexOfSelectedNote] = useState(undefined);

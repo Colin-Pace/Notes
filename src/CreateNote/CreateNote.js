@@ -1,8 +1,10 @@
+import "./CreateNote.css";
+
 function CreateNote(props) {
 
   const handleCreateNoteFormSubmission = function(e) {
 
-    e.preventDefault();
+    e.preventDefault(); 
 
     const title = e.target.title.value;
 
@@ -38,33 +40,39 @@ function CreateNote(props) {
 
     <main id = "main">
 
-      <h2>Main</h2>
+      <form 
+      
+        onSubmit = { handleCreateNoteFormSubmission }
 
-      <form onSubmit = { handleCreateNoteFormSubmission }>
+        id = "createNoteForm"
+        
+      >
       
         <div>
       
-          <label for="name">Title: </label>
-      
-          <input type="text" name="title" />
+          <input 
+          
+            id = "titleInput" 
+            
+            type="text" 
+            
+            name="title"
+
+            defaultValue = "Note title ..."
+            
+          /> 
       
         </div>
       
         <div>
       
-          <label for="email">Note: </label>
-      
           <textarea 
           
-            id = "note" 
+            id = "noteInput" 
             
             name = "note"
-                            
-            rows = "15" 
-            
-            cols = "33"
           
-            defaultValue = "It was a dark and stormy night...">
+            defaultValue = "Note content ...">
           
           </textarea>
       

@@ -1,8 +1,10 @@
-function DisplayNote(props) {
+import "./DisplayNote.css";
 
+function DisplayNote(props) {
+ 
   return (
 
-    <div>
+    <div id = "noteDisplay">
 
       <h2>{ props.selectedNote.title }</h2>
 
