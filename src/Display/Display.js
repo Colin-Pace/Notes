@@ -1,82 +1,48 @@
+import { useState } from "react";
+
+import CreateNote from "../CreateNote/CreateNote.js";
+
 function Display(props) {
 
-  const handleFormSubmission = function(e) {
+  const [createNote, setCreateNote] = useState(false);
 
-    e.preventDefault();
+  const handleCreateNote = function() {
 
-    const title = e.target.title.value;
+    setCreateNote(true);
 
-    const note = e.target.note.value;
+  }
 
-    e.target.title.value = "";
+  const noteCreated = function() {
 
-    e.target.note.value = "";
+    setCreateNote(false);
 
-    const newEntry = {
-      
-      "title": title,
-
-      "content": note
-
-    };
-
-    let storedData = localStorage.getItem("notes");
-
-    storedData = JSON.parse(storedData);
-
-    storedData.push(newEntry);
-
-    localStorage.setItem("notes", JSON.stringify(storedData));
-
-    props.populateNotesList();
-
-  };
+  }
 
   return (
 
-    <main id = "main">
+    <div>
 
-        <h2>Main</h2>
+      <button onClick = { handleCreateNote }>Create Note</button>
 
-        <form onSubmit = { handleFormSubmission }>
-        
-          <div>
-        
-            <label for="name">Title: </label>
-        
-            <input type="text" name="title" />
-        
-          </div>
-        
-          <div>
-        
-            <label for="email">Note: </label>
-        
-            <textarea 
-            
-              id = "note" 
-              
-              name = "note"
-                              
-              rows = "15" 
-              
-              cols = "33">
-            
-              It was a dark and stormy night...
-            
-            </textarea>
-        
-          </div>
-        
-          <div>
-        
-            <input type="submit" value="Submit" />
-        
-          </div>
-        
-        </form>
+      {
 
-      </main>
+        createNote ? 
+
+          <CreateNote 
+          
+            populateNotesList = {props.populateNotesList}
+
+            noteCreated = {noteCreated}
+          
+          />
+
+          :
+
+          ""
+
+      }
+
+  </div>
 
   )
   

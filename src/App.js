@@ -21,6 +21,8 @@ function App() {
   };
 
   useEffect(() => {
+
+    localStorage.setItem("notes", JSON.stringify([]));
    
     populateNotesList();
 
