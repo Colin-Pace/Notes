@@ -1,6 +1,14 @@
 import "./List.css";
 
+import Note from "../Note/Note.js";
+
 function List(props) {
+
+  const handleNoteClick = function() {
+
+    console.log("Test note click");
+
+  }
   
   return (
 
@@ -12,9 +20,19 @@ function List(props) {
         
           props.notes.map((note, index) => {
 
-            return <div id = { index }>
+            return <div 
+            
+                     onClick = { handleNoteClick }         
 
-                     <h2>{ note["title"] }</h2>
+                     id = { index }>
+
+                     <Note 
+
+                       noteInformation = {note}
+
+                       noteIndex = {index}
+                     
+                     />
 
                    </div>
 
