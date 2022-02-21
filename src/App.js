@@ -10,14 +10,18 @@ function App() {
 
   const [notes, setNotes] = useState([]);
 
-  const [noteForDisplay, setNoteForDisplay] = useState({});
-
   // empty, edit, display, create
   const [displayState, setDisplayState] = useState("empty");
 
-  const [noteForEdit, setNoteForEdit] = useState({});
+  // const [noteForDisplay, setNoteForDisplay] = useState({});
 
-  const [indexOfNoteForEdit, setIndexOfNoteForEdit] = useState(undefined);
+  // const [noteForEdit, setNoteForEdit] = useState({});
+
+  // const [indexOfNoteForEdit, setIndexOfNoteForEdit] = useState(undefined);
+
+  const [selectedNote, setSelectedNote] = useState({});
+
+  const [indexOfSelectedNote, setIndexOfSelectedNote] = useState(undefined);
 
   const populateNotesList = function() {
 
@@ -39,7 +43,7 @@ function App() {
 
   const passNoteToDisplay = function(note) {
 
-    setNoteForDisplay(note);
+    setSelectedNote(note);
 
     setDisplayState("display");
 
@@ -47,11 +51,11 @@ function App() {
 
   const passNoteToEdit = function(note, index) {
 
-    setNoteForEdit(note);
+    setSelectedNote(note);
 
     setDisplayState("edit");
 
-    setIndexOfNoteForEdit(index);
+    setIndexOfSelectedNote(index);
 
   }
 
@@ -89,13 +93,11 @@ function App() {
       
         populateNotesList = { populateNotesList }
 
-        noteForDisplay = { noteForDisplay }
+        selectedNote = { selectedNote }
+
+        indexOfSelectedNote = { indexOfSelectedNote }
 
         turnOffNoteForDisplay = { turnOffNoteForDisplay }
-
-        noteForEdit = { noteForEdit }
-
-        indexOfNoteForEdit = { indexOfNoteForEdit }
 
         noteCreation = { noteCreation }
 

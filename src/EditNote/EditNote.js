@@ -26,7 +26,7 @@ function EditNote(props) {
 
     let updatedData = storedData.map((entry, entryIndex) => {
 
-      if (props.indexOfNoteForEdit === entryIndex) {
+      if (props.indexOfSelectedNote === entryIndex) {
 
         return newEntry;
 
@@ -52,7 +52,7 @@ function EditNote(props) {
       
           <label for="name">Title: </label>
       
-          <input type="text" name="title" defaultValue = { props.noteForEdit.title }/>
+          <input type="text" name="title" defaultValue = { props.selectedNote.title }/>
       
         </div>
       
@@ -70,7 +70,7 @@ function EditNote(props) {
             
             cols = "33"
           
-            defaultValue = { props.noteForEdit.content }>
+            defaultValue = { props.selectedNote.content }>
           
           </textarea>
       

@@ -8,7 +8,7 @@ import EditNote from "../EditNote/EditNote.js";
 
 function Display(props) {
 
-  const [noteForDisplay, setNoteForDisplay] = useState(false);
+  // const [noteForDisplay, setNoteForDisplay] = useState(false);
 
   const handleCreateNote = function() {
 
@@ -46,7 +46,7 @@ function Display(props) {
 
             <DisplayNote 
 
-              noteForDisplay = { props.noteForDisplay }
+              selectedNote = { props.selectedNote }
 
             />
 
@@ -56,9 +56,9 @@ function Display(props) {
 
             <EditNote
 
-              noteForEdit = { props.noteForEdit }
+            selectedNote = { props.selectedNote }
 
-              indexOfNoteForEdit = { props.indexOfNoteForEdit }
+              indexOfSelectedNote = { props.indexOfSelectedNote }
 
               populateNotesList = { props.populateNotesList }
 

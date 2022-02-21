@@ -4,9 +4,9 @@ function DisplayNote(props) {
 
     <div>
 
-      <h2>{ props.noteForDisplay.title }</h2>
+      <h2>{ props.selectedNote.title }</h2>
 
-      <p>{ props.noteForDisplay.content }</p>
+      <p>{ props.selectedNote.content }</p>
 
     </div>
 
