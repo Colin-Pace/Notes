@@ -8,7 +8,7 @@ function Note(props) {
 
     storedData = JSON.parse(storedData);
 
-    let updatedData = storedData.map((entry, entryIndex) => {
+    let updatedData = storedData.filter((entry, entryIndex) => {
 
       if (index !== entryIndex) {
 
@@ -20,7 +20,7 @@ function Note(props) {
 
     localStorage.setItem("notes", JSON.stringify(updatedData));
 
-    // props.populateNotesList();
+    props.populateNotesList();
 
   };
 

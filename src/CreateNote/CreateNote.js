@@ -62,9 +62,9 @@ function CreateNote(props) {
                             
             rows = "15" 
             
-            cols = "33">
+            cols = "33"
           
-            It was a dark and stormy night...
+            defaultValue = "It was a dark and stormy night...">
           
           </textarea>
       

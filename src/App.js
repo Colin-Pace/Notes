@@ -22,6 +22,8 @@ function App() {
 
     setNotes(storedData);
 
+    setBooleanNoteForDisplay(false);
+
   };
 
   const passNoteToDisplay = function(note) {
