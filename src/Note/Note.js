@@ -4,7 +4,23 @@ function Note(props) {
 
   const handleDeleteNote = function(index) {
 
-    console.log("Test delete click", index);
+    let storedData = localStorage.getItem("notes");
+
+    storedData = JSON.parse(storedData);
+
+    let updatedData = storedData.map((entry, entryIndex) => {
+
+      if (index !== entryIndex) {
+
+        return entry;
+
+      }
+
+    });
+
+    localStorage.setItem("notes", JSON.stringify(updatedData));
+
+    // props.populateNotesList();
 
   };
 

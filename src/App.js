@@ -17,7 +17,7 @@ function App() {
   const populateNotesList = function() {
 
     let storedData = localStorage.getItem("notes");
-
+    
     storedData = JSON.parse(storedData);
 
     setNotes(storedData);
@@ -55,6 +55,8 @@ function App() {
         notes = { notes }
 
         passNoteToDisplay = { passNoteToDisplay }
+
+        populateNotesList = { populateNotesList }
       
       />
 

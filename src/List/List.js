@@ -32,6 +32,8 @@ function List(props) {
 
                      <Note 
 
+                       populateNotesList = { props.populateNotesList }
+
                        handleNoteClick = { handleNoteClick }
 
                        noteInformation = { note }
