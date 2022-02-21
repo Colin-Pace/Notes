@@ -39,6 +39,8 @@ function List(props) {
                        noteInformation = { note }
 
                        noteIndex = { index }
+
+                       passNoteToEdit = { props.passNoteToEdit }
                      
                      />
 

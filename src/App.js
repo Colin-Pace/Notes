@@ -14,6 +14,12 @@ function App() {
 
   const [booleanNoteForDisplay, setBooleanNoteForDisplay] = useState(false);
 
+  const [noteForEdit, setNoteForEdit] = useState({});
+
+  const [indexOfNoteForEdit, setIndexOfNoteForEdit] = useState(undefined);
+
+  const [booleanNoteForEdit, setBooleanNoteForEdit] = useState(false);
+
   const populateNotesList = function() {
 
     let storedData = localStorage.getItem("notes");
@@ -24,6 +30,8 @@ function App() {
 
     setBooleanNoteForDisplay(false);
 
+    setBooleanNoteForEdit(false);
+
   };
 
   const passNoteToDisplay = function(note) {
@@ -33,6 +41,16 @@ function App() {
     setBooleanNoteForDisplay(true);
 
   };
+
+  const passNoteToEdit = function(note, index) {
+
+    setNoteForEdit(note);
+
+    setBooleanNoteForEdit(true);
+
+    setIndexOfNoteForEdit(index);
+
+  }
 
   const turnOffNoteForDisplay = function() {
 
@@ -58,6 +76,8 @@ function App() {
 
         passNoteToDisplay = { passNoteToDisplay }
 
+        passNoteToEdit = { passNoteToEdit }
+
         populateNotesList = { populateNotesList }
       
       />
@@ -66,11 +86,17 @@ function App() {
       
         populateNotesList = { populateNotesList }
 
-        noteForDisplay = { noteForDisplay }
-
         booleanNoteForDisplay = { booleanNoteForDisplay }
 
+        noteForDisplay = { noteForDisplay }
+
         turnOffNoteForDisplay = { turnOffNoteForDisplay }
+
+        booleanNoteForEdit = { booleanNoteForEdit }
+
+        noteForEdit = { noteForEdit }
+
+        indexOfNoteForEdit = { indexOfNoteForEdit }
 
       />
       

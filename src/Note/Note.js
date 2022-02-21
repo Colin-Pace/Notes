@@ -24,6 +24,18 @@ function Note(props) {
 
   };
 
+  const handleEditNote = function(index) {
+
+    let note = localStorage.getItem("notes");
+
+    note = JSON.parse(note);
+
+    note = note[index];
+
+    props.passNoteToEdit(note, index);
+
+  };
+
   return (
  
     <div className = "note">
@@ -45,6 +57,12 @@ function Note(props) {
         onClick = { () => handleDeleteNote(props.noteIndex) }
         
       />
+
+      <button
+      
+        onClick = { () => handleEditNote(props.noteIndex) }
+      
+      >Edit</button>
 
     </div>
 

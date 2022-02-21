@@ -35,4 +35,6 @@ App
   
     DisplayNote
 
+    EditNote
+
 */

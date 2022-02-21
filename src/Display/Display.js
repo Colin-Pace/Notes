@@ -4,6 +4,8 @@ import CreateNote from "../CreateNote/CreateNote.js";
 
 import DisplayNote from "../DisplayNote/DisplayNote.js";
 
+import EditNote from "../EditNote/EditNote.js";
+
 function Display(props) {
 
   const [createNote, setCreateNote] = useState(false);
@@ -49,6 +51,20 @@ function Display(props) {
             <DisplayNote 
 
               noteForDisplay = { props.noteForDisplay }
+
+            />
+
+            :
+
+            props.booleanNoteForEdit ?
+
+            <EditNote
+
+              noteForEdit = { props.noteForEdit }
+
+              indexOfNoteForEdit = { props.indexOfNoteForEdit }
+
+              populateNotesList = { props.populateNotesList }
 
             />
 

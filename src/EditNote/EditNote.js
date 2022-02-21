@@ -1,6 +1,6 @@
-function CreateNote(props) {
+function EditNote(props) {
 
-  const handleCreateNoteFormSubmission = function(e) {
+  const handleEditNoteFormSubmission = function(e) {
 
     e.preventDefault();
 
@@ -24,29 +24,35 @@ function CreateNote(props) {
 
     storedData = JSON.parse(storedData);
 
-    storedData.push(newEntry);
+    let updatedData = storedData.map((entry, entryIndex) => {
 
-    localStorage.setItem("notes", JSON.stringify(storedData));
+      if (props.indexOfNoteForEdit === entryIndex) {
+
+        return newEntry;
+
+      }
+
+    });
+
+    localStorage.setItem("notes", JSON.stringify(updatedData));
 
     props.populateNotesList();
-
-    props.noteCreated();
 
   };
 
   return (
 
-    <main id = "main">
+    <div>
 
-      <h2>Main</h2>
+      <h2>Edit note</h2>
 
-      <form onSubmit = { handleCreateNoteFormSubmission }>
+      <form onSubmit = { handleEditNoteFormSubmission }>
       
         <div>
       
           <label for="name">Title: </label>
       
-          <input type="text" name="title" />
+          <input type="text" name="title" defaultValue = { props.noteForEdit.title }/>
       
         </div>
       
@@ -64,7 +70,7 @@ function CreateNote(props) {
             
             cols = "33"
           
-            defaultValue = "It was a dark and stormy night...">
+            defaultValue = { props.noteForEdit.content }>
           
           </textarea>
       
@@ -78,10 +84,10 @@ function CreateNote(props) {
       
       </form>
 
-    </main>
+    </div>
 
   )
 
 }
 
-export default CreateNote;
+export default EditNote;
