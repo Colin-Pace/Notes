@@ -10,6 +10,10 @@ function App() {
 
   const [notes, setNotes] = useState([]);
 
+  const [noteForDisplay, setNoteForDisplay] = useState({});
+
+  const [booleanNoteForDisplay, setBooleanNoteForDisplay] = useState(false);
+
   const populateNotesList = function() {
 
     let storedData = localStorage.getItem("notes");
@@ -17,6 +21,14 @@ function App() {
     storedData = JSON.parse(storedData);
 
     setNotes(storedData);
+
+  };
+
+  const passNoteToDisplay = function(note) {
+
+    setNoteForDisplay(note);
+
+    setBooleanNoteForDisplay(true);
 
   };
 
@@ -35,12 +47,18 @@ function App() {
       <List 
 
         notes = { notes }
+
+        passNoteToDisplay = { passNoteToDisplay }
       
       />
 
       <Display 
       
-        populateNotesList = {populateNotesList}
+        populateNotesList = { populateNotesList }
+
+        noteForDisplay = { noteForDisplay }
+
+        booleanNoteForDisplay = { booleanNoteForDisplay }
 
       />
       

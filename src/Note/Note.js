@@ -2,11 +2,21 @@ import "./Note.css";
 
 function Note(props) {
 
+  const handleDeleteNote = function(index) {
+
+    console.log("Test delete click", index);
+
+  };
+
   return (
  
     <div className = "note">
 
-      <h2>{ props.noteInformation.title }</h2>
+      <h2
+      
+        onClick = { () => props.handleNoteClick(props.noteIndex) }
+
+      >{ props.noteInformation.title }</h2>
 
       <img 
       
@@ -15,6 +25,8 @@ function Note(props) {
         alt = "image" 
         
         className = "deleteImage"
+
+        onClick = { () => handleDeleteNote(props.noteIndex) }
         
       />
 

@@ -4,11 +4,17 @@ import Note from "../Note/Note.js";
 
 function List(props) {
 
-  const handleNoteClick = function() {
+  const handleNoteClick = function(index) {
 
-    console.log("Test note click");
+    let note = localStorage.getItem("notes");
 
-  }
+    note = JSON.parse(note);
+
+    note = note[index];
+
+    props.passNoteToDisplay(note);
+
+  };
   
   return (
 
@@ -22,15 +28,15 @@ function List(props) {
 
             return <div 
             
-                     onClick = { handleNoteClick }         
-
                      id = { index }>
 
                      <Note 
 
-                       noteInformation = {note}
+                       handleNoteClick = { handleNoteClick }
 
-                       noteIndex = {index}
+                       noteInformation = { note }
+
+                       noteIndex = { index }
                      
                      />
 
