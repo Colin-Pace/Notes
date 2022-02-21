@@ -32,6 +32,12 @@ function App() {
 
   };
 
+  const turnOffNoteForDisplay = function() {
+
+    setBooleanNoteForDisplay(false);
+
+  }
+
   useEffect(() => {
 
     localStorage.setItem("notes", JSON.stringify([]));
@@ -59,6 +65,8 @@ function App() {
         noteForDisplay = { noteForDisplay }
 
         booleanNoteForDisplay = { booleanNoteForDisplay }
+
+        turnOffNoteForDisplay = { turnOffNoteForDisplay }
 
       />
       

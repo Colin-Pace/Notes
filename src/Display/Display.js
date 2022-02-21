@@ -20,6 +20,8 @@ function Display(props) {
 
     setCreateNote(false);
 
+    props.turnOffNoteForDisplay();
+
   };
 
   return (
