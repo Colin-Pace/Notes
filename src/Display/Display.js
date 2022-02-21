@@ -8,19 +8,15 @@ import EditNote from "../EditNote/EditNote.js";
 
 function Display(props) {
 
-  const [createNote, setCreateNote] = useState(false);
-
   const [noteForDisplay, setNoteForDisplay] = useState(false);
 
   const handleCreateNote = function() {
 
-    setCreateNote(true);
+    props.noteCreation();
 
   };
 
   const noteCreated = function() {
-
-    setCreateNote(false);
 
     props.turnOffNoteForDisplay();
 
@@ -34,7 +30,7 @@ function Display(props) {
 
       {
 
-        createNote ? 
+          props.displayState === "create" ? 
 
           <CreateNote 
           
@@ -46,7 +42,7 @@ function Display(props) {
 
           :
 
-          props.booleanNoteForDisplay ? 
+          props.displayState === "display" ? 
 
             <DisplayNote 
 
@@ -56,7 +52,7 @@ function Display(props) {
 
             :
 
-            props.booleanNoteForEdit ?
+            props.displayState === "edit" ?
 
             <EditNote
 

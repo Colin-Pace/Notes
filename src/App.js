@@ -12,13 +12,12 @@ function App() {
 
   const [noteForDisplay, setNoteForDisplay] = useState({});
 
-  const [booleanNoteForDisplay, setBooleanNoteForDisplay] = useState(false);
+  // empty, edit, display, create
+  const [displayState, setDisplayState] = useState("empty");
 
   const [noteForEdit, setNoteForEdit] = useState({});
 
   const [indexOfNoteForEdit, setIndexOfNoteForEdit] = useState(undefined);
-
-  const [booleanNoteForEdit, setBooleanNoteForEdit] = useState(false);
 
   const populateNotesList = function() {
 
@@ -28,17 +27,21 @@ function App() {
 
     setNotes(storedData);
 
-    setBooleanNoteForDisplay(false);
-
-    setBooleanNoteForEdit(false);
+    setDisplayState("empty");
 
   };
+
+  const noteCreation = function() {
+
+    setDisplayState("create");
+
+  }
 
   const passNoteToDisplay = function(note) {
 
     setNoteForDisplay(note);
 
-    setBooleanNoteForDisplay(true);
+    setDisplayState("display");
 
   };
 
@@ -46,7 +49,7 @@ function App() {
 
     setNoteForEdit(note);
 
-    setBooleanNoteForEdit(true);
+    setDisplayState("edit");
 
     setIndexOfNoteForEdit(index);
 
@@ -54,7 +57,7 @@ function App() {
 
   const turnOffNoteForDisplay = function() {
 
-    setBooleanNoteForDisplay(false);
+    setDisplayState("empty");
 
   }
 
@@ -86,17 +89,17 @@ function App() {
       
         populateNotesList = { populateNotesList }
 
-        booleanNoteForDisplay = { booleanNoteForDisplay }
-
         noteForDisplay = { noteForDisplay }
 
         turnOffNoteForDisplay = { turnOffNoteForDisplay }
 
-        booleanNoteForEdit = { booleanNoteForEdit }
-
         noteForEdit = { noteForEdit }
 
         indexOfNoteForEdit = { indexOfNoteForEdit }
+
+        noteCreation = { noteCreation }
+
+        displayState = { displayState }
 
       />
       
