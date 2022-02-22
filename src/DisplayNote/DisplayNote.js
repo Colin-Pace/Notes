@@ -8,7 +8,7 @@ function DisplayNote(props) {
 
       <h2>{ props.selectedNote.title }</h2>
 
-      <p>{ props.selectedNote.content }</p>
+      <p id = "textContent">{ props.selectedNote.content }</p>
 
     </div>
 

@@ -7,12 +7,12 @@
   color: #6495ED;
 }
 
-.deleteImage {
-  height: 15px;
-  width: 15px;
+.deleteNote {
+  width: 60px;
   margin-right: 10px;
 }
 
 .editNote {
   margin-left: 10px;
+  width: 60px;
 }

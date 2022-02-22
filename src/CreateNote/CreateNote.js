@@ -80,7 +80,15 @@ function CreateNote(props) {
       
         <div>
       
-          <input type="submit" value="Submit" />
+          <input 
+          
+            type = "submit" 
+            
+            value = "Submit" 
+            
+            id = "submitNote"
+            
+          />
       
         </div>
       

@@ -90,7 +90,15 @@ function EditNote(props) {
       
         <div>
       
-          <input type="submit" value="Submit" />
+          <input 
+          
+            type = "submit" 
+            
+            value = "Submit" 
+            
+            id = "submitEdit"
+            
+          /> 
       
         </div>
       

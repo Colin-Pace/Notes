@@ -48,7 +48,7 @@ function Note(props) {
 
       >{ props.noteInformation.title }</h2>
 
-      <img 
+      {/* <img 
       
         src = "/Delete.png" 
         
@@ -58,7 +58,15 @@ function Note(props) {
 
         onClick = { () => handleDeleteNote(props.noteIndex) }
         
-      />
+      /> */}
+
+      <button
+ 
+        className = "deleteNote"
+
+        onClick = { () => handleDeleteNote(props.noteIndex) }
+
+      >Delete</button>
 
       <button
 

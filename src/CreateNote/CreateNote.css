@@ -12,3 +12,8 @@
   height: 300px;
   width: 500px;
 }
+
+#submitNote {
+  width: 200px;
+  height: 40px;
+}

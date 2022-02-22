@@ -1,6 +1,11 @@
 #noteDisplay {
   text-align: center;
-  margin-top: 15%;
+  margin-top: 10%;
   width: 500px;
   padding-left: 20%;
+}
+
+#textContent {
+  text-align: left;
+  line-height: 40px;
 }
