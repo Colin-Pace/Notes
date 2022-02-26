@@ -49,7 +49,7 @@ function CreateNote(props) {
       >
       
         <div>
-      
+       
           <input 
           
             id = "titleInput" 
@@ -58,7 +58,7 @@ function CreateNote(props) {
             
             name="title"
 
-            defaultValue = "Note title ..."
+            defaultValue = "Note title"
             
           /> 
       
@@ -72,7 +72,7 @@ function CreateNote(props) {
             
             name = "note"
           
-            defaultValue = "Note content ...">
+            defaultValue = "Note content">
           
           </textarea>
       

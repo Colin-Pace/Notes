@@ -72,7 +72,7 @@ function App() {
     <div id = "app">
 
       <List 
-
+ 
         notes = { notes }
 
         passNoteToDisplay = { passNoteToDisplay }

@@ -48,26 +48,6 @@ function Note(props) {
 
       >{ props.noteInformation.title }</h2>
 
-      {/* <img 
-      
-        src = "/Delete.png" 
-        
-        alt = "image" 
-        
-        className = "deleteImage"
-
-        onClick = { () => handleDeleteNote(props.noteIndex) }
-        
-      /> */}
-
-      <button
- 
-        className = "deleteNote"
-
-        onClick = { () => handleDeleteNote(props.noteIndex) }
-
-      >Delete</button>
-
       <button
 
         className = "editNote"
@@ -75,6 +55,14 @@ function Note(props) {
         onClick = { () => handleEditNote(props.noteIndex) }
       
       >Edit</button>
+
+      <button
+      
+        className = "deleteNote"
+
+        onClick = { () => handleDeleteNote(props.noteIndex) }
+
+      >Delete</button>
 
     </div>
 
