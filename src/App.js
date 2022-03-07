@@ -4,7 +4,7 @@ import Display from "./Display/Display.js";
 
 import List from "./List/List.js";
 
-import './App.css';
+import './App.css'; 
 
 function App() {
 
@@ -16,6 +16,10 @@ function App() {
   const [selectedNote, setSelectedNote] = useState({});
 
   const [indexOfSelectedNote, setIndexOfSelectedNote] = useState(undefined);
+
+  const [id, setID] = useState(0);
+
+  const [notesSort, setNotesSort] = useState("newest");
 
   const populateNotesList = function() {
 
@@ -59,6 +63,18 @@ function App() {
 
   }
 
+  const incrementID = function() {
+
+    setID(id + 1);
+
+  }
+
+  const defineNotesSort = function(sort) {
+
+    setNotesSort(sort);
+
+  }
+
   useEffect(() => {
 
     localStorage.setItem("notes", JSON.stringify([]));
@@ -80,8 +96,10 @@ function App() {
         passNoteToEdit = { passNoteToEdit }
 
         populateNotesList = { populateNotesList }
-      
-      />
+
+        notesSort = { notesSort }
+
+        defineNotesSort = { defineNotesSort }/>
 
       <Display 
       
@@ -97,7 +115,9 @@ function App() {
 
         displayState = { displayState }
 
-      />
+        incrementID = { incrementID }
+
+        id = { id }/>
       
     </div>
   

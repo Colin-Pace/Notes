@@ -34,7 +34,7 @@ function Display(props) {
           
       </button>
 
-      {
+      { 
 
           props.displayState === "create" ? 
 
@@ -43,6 +43,10 @@ function Display(props) {
             populateNotesList = { props.populateNotesList }
 
             noteCreated = { noteCreated }
+
+            incrementID = { props.incrementID }
+
+            id = { props.id }
           
           />
 

@@ -15,38 +15,112 @@ function List(props) {
     props.passNoteToDisplay(note);
 
   };
+
+  const handleSortNotes = function(e) {
+
+    e.preventDefault();
+
+    const sort = e.target.sort.value;
+    
+    props.defineNotesSort(sort);
+
+  };
   
-  return (
+  return ( 
 
     <section id = "notesList">
 
         <h2 id = "title">Notes organizer</h2>
 
-        { 
-        
-          props.notes.map((note, index) => {
+        <form
+      
+          onSubmit = { handleSortNotes }>
 
-            return <div 
+          <label for = "sort">Sort:</label>
+
+          <select name = "sort" id = "sortingMenu">
             
-                     id = { index }>
+            <option value = "newest">Newest</option>
+            
+            <option value = "oldest">Oldest</option>
+          
+          </select>
 
-                     <Note 
+          <input type = "submit" value = "Submit"></input>
 
-                       populateNotesList = { props.populateNotesList }
+        </form>
 
-                       handleNoteClick = { handleNoteClick }
+        {
 
-                       noteInformation = { note }
+          props.notesSort === "newest" ? 
+        
+            props.notes
 
-                       noteIndex = { index }
+              .sort(function(a, b) {
+                
+                return a.id - b.id
+              
+              })
+            
+              .map((note, index) => {
 
-                       passNoteToEdit = { props.passNoteToEdit }
-                     
-                     />
+                return <div 
+                
+                        id = { index }>
 
-                   </div>
+                        <Note 
 
-          })
+                          populateNotesList = { props.populateNotesList }
+
+                          handleNoteClick = { handleNoteClick }
+
+                          noteInformation = { note }
+
+                          noteIndex = { index }
+
+                          passNoteToEdit = { props.passNoteToEdit }
+                        
+                        />
+
+                      </div>
+
+              })
+
+          :
+
+            props.notes
+
+              .sort(function(a, b) {
+              
+                  return b.id - a.id
+                
+              })
+              
+              .map((note, index) => {
+
+                return <div 
+                
+                        id = { index }>
+
+                        <Note 
+
+                          populateNotesList = { props.populateNotesList }
+
+                          handleNoteClick = { handleNoteClick }
+
+                          noteInformation = { note }
+
+                          noteIndex = { index }
+
+                          passNoteToEdit = { props.passNoteToEdit }
+                        
+                        />
+
+                      </div>
+
+              })
+
+
         
         }
 

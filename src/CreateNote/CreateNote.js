@@ -15,12 +15,16 @@ function CreateNote(props) {
     e.target.note.value = "";
 
     const newEntry = {
+
+      "id": props.id,
       
       "title": title,
 
       "content": note
 
     };
+
+    props.incrementID();
 
     let storedData = localStorage.getItem("notes");
 
@@ -44,9 +48,7 @@ function CreateNote(props) {
       
         onSubmit = { handleCreateNoteFormSubmission }
 
-        id = "createNoteForm"
-        
-      >
+        id = "createNoteForm">
       
         <div>
        
@@ -89,7 +91,7 @@ function CreateNote(props) {
             id = "submitNote"
             
           />
-      
+
         </div>
       
       </form>
