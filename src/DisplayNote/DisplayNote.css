@@ -1,3 +1,17 @@
+#noteDisplay {
+  text-align: center;
+  margin-top: 10%;
+  width: 500px;
+  padding-left: 20%;
+}
+
+#noteTitle {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 #textContent {
-  width: 100px;
+  text-align: left;
+  line-height: 40px;
+  overflow-wrap: break-word;
+  font-family: Arial, Helvetica, sans-serif;
 }

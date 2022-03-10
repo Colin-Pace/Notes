@@ -6,6 +6,10 @@
   margin-top: 10px;
 }
 
+.noteTitle {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .editNote {
   margin-right: 15px;
   width: 60px;

@@ -6,7 +6,7 @@ function DisplayNote(props) {
 
     <div id = "noteDisplay">
 
-      <h2>{ props.selectedNote.title }</h2>
+      <h2 id = "noteTitle">{ props.selectedNote.title }</h2>
 
       <p id = "textContent">{ props.selectedNote.content }</p>
 
