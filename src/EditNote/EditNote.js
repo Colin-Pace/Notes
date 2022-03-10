@@ -50,7 +50,7 @@ function EditNote(props) {
 
   return (
 
-    <div>
+    <div id = "main">
 
       <form 
       
@@ -61,8 +61,6 @@ function EditNote(props) {
       >
       
         <div>
-
-          <label>Title:</label>
       
           <input 
 
@@ -79,9 +77,6 @@ function EditNote(props) {
         </div>
       
         <div>
-
-
-          <label>Content:</label>
       
           <textarea 
           
@@ -106,7 +101,7 @@ function EditNote(props) {
             id = "submitEdit"
             
           /> 
-      
+       
         </div>
       
       </form>

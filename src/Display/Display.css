@@ -1,9 +1,17 @@
 #displayArea {
-  background-color: rgb(190, 190, 255);
+  /* background-color: rgb(190, 190, 255); */
   width: 80%;
   height: 100%;
 }
 
 #createNote {
   float: right;
+  margin-top: 20px;
+  margin-right: 40px;
+  color: #6495ed;
+  background-color: white;
+  border-radius: 5px;
+  height: 80px;
+  width: 160px;
+  font-size: 20px;
 }

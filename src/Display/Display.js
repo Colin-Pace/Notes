@@ -33,7 +33,7 @@ function Display(props) {
           Create Note
           
       </button>
-
+ 
       { 
 
           props.displayState === "create" ? 

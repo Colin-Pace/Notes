@@ -19,7 +19,7 @@ function App() {
 
   const [id, setID] = useState(0);
 
-  const [notesSort, setNotesSort] = useState("newest");
+  const [notesSort, setNotesSort] = useState("oldest");
 
   const populateNotesList = function() {
 
@@ -77,7 +77,31 @@ function App() {
 
   useEffect(() => {
 
-    localStorage.setItem("notes", JSON.stringify([]));
+    let storedData = localStorage.getItem("notes");
+
+    storedData = JSON.parse(storedData);
+
+    if (storedData.length === 0) {
+
+      localStorage.setItem("notes", JSON.stringify([]));
+
+    } else {
+
+      let largest = 0;
+
+      storedData.forEach((entry) => {
+
+        if (entry["id"] > largest) {
+
+          largest = entry["id"];
+
+        }
+
+      });
+
+      setID(largest + 1);
+
+    }
    
     populateNotesList();
 

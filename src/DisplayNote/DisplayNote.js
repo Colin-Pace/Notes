@@ -11,7 +11,7 @@ function DisplayNote(props) {
       <p id = "textContent">{ props.selectedNote.content }</p>
 
     </div>
-
+ 
   )
 
 }

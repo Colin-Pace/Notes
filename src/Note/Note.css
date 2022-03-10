@@ -1,3 +1,21 @@
 .note {
   border: 1px solid gray;
+  text-align: center;
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 10px;
+}
+
+.editNote {
+  margin-right: 15px;
+  width: 60px;
+}
+
+.deleteNote {
+  margin-left: 15px;
+  width: 60px;
+}
+
+.editNote, .deleteNote {
+  margin-bottom: 20px;
 }

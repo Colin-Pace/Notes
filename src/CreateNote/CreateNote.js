@@ -42,7 +42,7 @@ function CreateNote(props) {
 
   return (
 
-    <main id = "main">
+    <main id = "main"> 
 
       <form  
       
@@ -51,8 +51,6 @@ function CreateNote(props) {
         id = "createNoteForm">
       
         <div>
-       
-          <label>Title:</label>
 
           <input 
           
@@ -62,15 +60,13 @@ function CreateNote(props) {
             
             name="title"
 
-            defaultValue = ""
+            placeholder = "Title"
             
           /> 
       
         </div>
       
         <div>
-      
-          <label>Content:</label>
 
           <textarea 
           
@@ -78,7 +74,7 @@ function CreateNote(props) {
             
             name = "note"
           
-            defaultValue = "">
+            placeholder = "Content">
           
           </textarea>
       

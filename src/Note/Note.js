@@ -37,11 +37,11 @@ function Note(props) {
   };
 
   return (
- 
+  
     <div className = "note">
 
       <h2
-
+ 
         className = "noteTitle"
       
         onClick = { () => props.handleNoteClick(props.noteIndex) }

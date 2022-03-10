@@ -25,14 +25,16 @@ function List(props) {
     props.defineNotesSort(sort);
 
   };
-  
+   
   return ( 
-
+ 
     <section id = "notesList">
 
         <h2 id = "title">Notes organizer</h2>
 
         <form
+
+          id = "sortForm"
       
           onSubmit = { handleSortNotes }>
 
@@ -58,7 +60,7 @@ function List(props) {
 
               .sort(function(a, b) {
                 
-                return a.id - b.id
+                return b.id - a.id
               
               })
             
@@ -92,7 +94,7 @@ function List(props) {
 
               .sort(function(a, b) {
               
-                  return b.id - a.id
+                  return a.id - b.id
                 
               })
               
