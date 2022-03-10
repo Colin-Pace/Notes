@@ -44,7 +44,7 @@ function CreateNote(props) {
 
     <main id = "main">
 
-      <form 
+      <form  
       
         onSubmit = { handleCreateNoteFormSubmission }
 
@@ -52,6 +52,8 @@ function CreateNote(props) {
       
         <div>
        
+          <label>Title:</label>
+
           <input 
           
             id = "titleInput" 
@@ -60,7 +62,7 @@ function CreateNote(props) {
             
             name="title"
 
-            defaultValue = "Note title"
+            defaultValue = ""
             
           /> 
       
@@ -68,13 +70,15 @@ function CreateNote(props) {
       
         <div>
       
+          <label>Content:</label>
+
           <textarea 
           
             id = "noteInput" 
             
             name = "note"
           
-            defaultValue = "Note content">
+            defaultValue = "">
           
           </textarea>
       

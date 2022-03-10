@@ -30,6 +30,8 @@ function EditNote(props) {
 
       if (props.indexOfSelectedNote === entryIndex) {
 
+        newEntry["id"] = entry["id"];
+
         return newEntry;
 
       } else {
@@ -59,6 +61,8 @@ function EditNote(props) {
       >
       
         <div>
+
+          <label>Title:</label>
       
           <input 
 
@@ -75,6 +79,9 @@ function EditNote(props) {
         </div>
       
         <div>
+
+
+          <label>Content:</label>
       
           <textarea 
           
