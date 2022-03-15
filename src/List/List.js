@@ -4,17 +4,23 @@ import Note from "../Note/Note.js";
 
 function List(props) {
 
-  const handleNoteClick = function(index) {
+  const handleNoteClick = function(id) {
 
-    let note = localStorage.getItem("notes");
+    let notes = localStorage.getItem("notes");
 
-    note = JSON.parse(note);
+    notes = JSON.parse(notes);
 
-    note = note[index];
+    notes.forEach(note => {
 
-    props.passNoteToDisplay(note);
+      console.log(note);
 
-    //console.log(note);
+      if (note["id"] === id) {
+
+        props.passNoteToDisplay(note);
+
+      }
+
+    });
 
   };
 
@@ -44,10 +50,10 @@ function List(props) {
 
           <select name = "sort" id = "sortingMenu">
             
-            <option value = "newest">Newest</option>
-            
             <option value = "oldest">Oldest</option>
-          
+
+            <option value = "newest">Newest</option>
+
           </select>
 
           <input type = "submit" value = "Submit"></input>
@@ -72,7 +78,7 @@ function List(props) {
                 
                         id = { index }>
 
-                        <Note 
+                        <Note
 
                           populateNotesList = { props.populateNotesList }
 
@@ -80,7 +86,7 @@ function List(props) {
 
                           noteInformation = { note }
 
-                          noteIndex = { index }
+                          noteIndex = { note["id"] }
 
                           passNoteToEdit = { props.passNoteToEdit }
                         
@@ -114,7 +120,7 @@ function List(props) {
 
                           noteInformation = { note }
 
-                          noteIndex = { index }
+                          noteIndex = { note["id"] }
 
                           passNoteToEdit = { props.passNoteToEdit }
                         

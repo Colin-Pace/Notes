@@ -129,8 +129,6 @@ function App() {
 
         displayState = { displayState }
 
-        //incrementID = { incrementID }
-
         id = { id }/>
       
     </div>
