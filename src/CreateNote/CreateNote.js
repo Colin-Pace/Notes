@@ -24,8 +24,6 @@ function CreateNote(props) {
 
     };
 
-    props.incrementID();
-
     let storedData = localStorage.getItem("notes");
 
     storedData = JSON.parse(storedData);

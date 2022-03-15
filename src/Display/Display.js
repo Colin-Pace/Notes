@@ -44,8 +44,6 @@ function Display(props) {
 
             noteCreated = { noteCreated }
 
-            incrementID = { props.incrementID }
-
             id = { props.id }
           
           />

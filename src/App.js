@@ -24,8 +24,30 @@ function App() {
   const populateNotesList = function() {
 
     let storedData = localStorage.getItem("notes");
-    
-    storedData = JSON.parse(storedData);
+
+    if (storedData.length === 0) {
+
+      localStorage.setItem("notes", JSON.stringify([]));
+
+    } else {
+
+      storedData = JSON.parse(storedData);
+
+      let largest = 0;
+
+      storedData.forEach((entry) => {
+
+        if (entry["id"] > largest) {
+
+          largest = entry["id"];
+
+        }
+
+      });
+
+      setID(largest + 1);
+
+    }
 
     setNotes(storedData);
 
@@ -63,12 +85,6 @@ function App() {
 
   }
 
-  const incrementID = function() {
-
-    setID(id + 1);
-
-  }
-
   const defineNotesSort = function(sort) {
 
     setNotesSort(sort);
@@ -76,32 +92,6 @@ function App() {
   }
 
   useEffect(() => {
-
-    let storedData = localStorage.getItem("notes");
-
-    storedData = JSON.parse(storedData);
-
-    if (storedData.length === 0) {
-
-      localStorage.setItem("notes", JSON.stringify([]));
-
-    } else {
-
-      let largest = 0;
-
-      storedData.forEach((entry) => {
-
-        if (entry["id"] > largest) {
-
-          largest = entry["id"];
-
-        }
-
-      });
-
-      setID(largest + 1);
-
-    }
    
     populateNotesList();
 
@@ -139,7 +129,7 @@ function App() {
 
         displayState = { displayState }
 
-        incrementID = { incrementID }
+        //incrementID = { incrementID }
 
         id = { id }/>
       

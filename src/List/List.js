@@ -14,6 +14,8 @@ function List(props) {
 
     props.passNoteToDisplay(note);
 
+    //console.log(note);
+
   };
 
   const handleSortNotes = function(e) {
