@@ -2,15 +2,15 @@ import "./Note.css";
 
 function Note(props) {
 
-  const handleDeleteNote = function(index) {
+  const handleDeleteNote = function(id) {
 
     let storedData = localStorage.getItem("notes");
 
     storedData = JSON.parse(storedData);
 
-    let updatedData = storedData.filter((entry, entryIndex) => {
+    let updatedData = storedData.filter(entry => {
 
-      if (index !== entryIndex) {
+      if (entry["id"] !== id) {
 
         return entry;
 
