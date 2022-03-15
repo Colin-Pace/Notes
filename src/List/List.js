@@ -12,8 +12,6 @@ function List(props) {
 
     notes.forEach(note => {
 
-      console.log(note);
-
       if (note["id"] === id) {
 
         props.passNoteToDisplay(note);

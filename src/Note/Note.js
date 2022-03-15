@@ -24,15 +24,23 @@ function Note(props) {
 
   };
 
-  const handleEditNote = function(index) {
+  const handleEditNote = function(id) {
 
-    let note = localStorage.getItem("notes");
+    let notes = localStorage.getItem("notes");
 
-    note = JSON.parse(note);
+    notes = JSON.parse(notes);
 
-    note = note[index];
+    notes.forEach(note => {
 
-    props.passNoteToEdit(note, index);
+      console.log(note);
+
+      if (note["id"] === id) {
+
+        props.passNoteToEdit(note);
+
+      }
+
+    });
 
   };
 
