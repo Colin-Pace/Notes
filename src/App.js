@@ -25,7 +25,7 @@ function App() {
 
     let storedData = localStorage.getItem("notes");
 
-    if (storedData.length === 0) {
+    if (storedData.length === 0 || storedData === null) {
 
       localStorage.setItem("notes", JSON.stringify([]));
 
@@ -92,6 +92,8 @@ function App() {
   }
 
   useEffect(() => {
+
+    localStorage.setItem("notes", JSON.stringify([]));
    
     populateNotesList();
 

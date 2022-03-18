@@ -26,9 +26,9 @@ function EditNote(props) {
 
     storedData = JSON.parse(storedData);
 
-    let updatedData = storedData.map((entry, entryIndex) => {
+    let updatedData = storedData.map(entry => {
 
-      if (props.indexOfSelectedNote === entryIndex) {
+      if (props.indexOfSelectedNote === entry["id"]) {
 
         newEntry["id"] = entry["id"];
 
@@ -47,6 +47,8 @@ function EditNote(props) {
     props.populateNotesList();
 
   };
+
+  console.log(props.indexOfSelectedNote);
 
   return (
 

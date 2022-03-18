@@ -32,11 +32,9 @@ function Note(props) {
 
     notes.forEach(note => {
 
-      console.log(note);
-
       if (note["id"] === id) {
 
-        props.passNoteToEdit(note);
+        props.passNoteToEdit(note, id);
 
       }
 
