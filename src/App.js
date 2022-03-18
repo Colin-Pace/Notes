@@ -93,7 +93,13 @@ function App() {
 
   useEffect(() => {
 
-    localStorage.setItem("notes", JSON.stringify([]));
+    let storedData = localStorage.getItem("notes");
+
+    if (storedData === undefined || storedData === null) {
+
+      localStorage.setItem("notes", JSON.stringify([]));
+
+    }
    
     populateNotesList();
 
