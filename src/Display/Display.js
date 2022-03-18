@@ -66,7 +66,7 @@ function Display(props) {
 
             selectedNote = { props.selectedNote }
 
-              indexOfSelectedNote = { props.indexOfSelectedNote }
+              idOfSelectedNote = { props.idOfSelectedNote }
 
               populateNotesList = { props.populateNotesList }
 

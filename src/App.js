@@ -15,7 +15,7 @@ function App() {
 
   const [selectedNote, setSelectedNote] = useState({});
 
-  const [indexOfSelectedNote, setIndexOfSelectedNote] = useState(undefined);
+  const [idOfSelectedNote, setIDOfSelectedNote] = useState(undefined);
 
   const [id, setID] = useState(0);
 
@@ -75,7 +75,7 @@ function App() {
 
     setDisplayState("edit");
 
-    setIndexOfSelectedNote(index);
+    setIDOfSelectedNote(index);
 
   }
 
@@ -123,7 +123,7 @@ function App() {
 
         selectedNote = { selectedNote }
 
-        indexOfSelectedNote = { indexOfSelectedNote }
+        idOfSelectedNote = { idOfSelectedNote }
 
         turnOffNoteForDisplay = { turnOffNoteForDisplay }
 
